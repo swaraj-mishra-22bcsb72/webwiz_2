@@ -5,9 +5,12 @@ import axios from 'axios';
 const BASE_URL = 'https://en.wikipedia.org/api/rest_v1';
 
 export const getTrendingTopics = async () => {
-  const res = await axios.get(`${BASE_URL}/feed/featured/${new Date().toISOString().split('T')[0]}`);
-  return res.data.tfa; // today's featured article
-};
+    const res = await axios.get('https://en.wikipedia.org/api/rest_v1/feed/featured', {
+      headers: { 'Accept': 'application/json' }
+    });
+    return res.data.tfa; // today's featured article
+  };
+  
 
 export const getOnThisDay = async () => {
   const today = new Date();

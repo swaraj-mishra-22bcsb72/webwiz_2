@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   Container,
@@ -16,7 +15,7 @@ import {
 } from '@mui/material';
 
 const HistoryPage = () => {
-  const { title } = useParams();
+  const title = "Sample Article"; // Hardcoded title
 
   const revisions = [
     {
@@ -26,7 +25,34 @@ const HistoryPage = () => {
       comment: "Updated references",
       size: "+245 bytes"
     },
-    // Add more revision history...
+    {
+      id: 2,
+      date: "2024-03-10",
+      user: "Editor456",
+      comment: "Fixed typos in the introduction",
+      size: "+120 bytes"
+    },
+    {
+      id: 3,
+      date: "2024-03-05",
+      user: "Admin789",
+      comment: "Reverted to a previous version",
+      size: "-300 bytes"
+    },
+    {
+      id: 4,
+      date: "2024-02-28",
+      user: "Contributor001",
+      comment: "Added new section on history",
+      size: "+500 bytes"
+    },
+    {
+      id: 5,
+      date: "2024-02-20",
+      user: "User123",
+      comment: "Improved formatting",
+      size: "+50 bytes"
+    }
   ];
 
   return (
@@ -78,4 +104,4 @@ const HistoryPage = () => {
   );
 };
 
-export default HistoryPage; 
+export default HistoryPage;

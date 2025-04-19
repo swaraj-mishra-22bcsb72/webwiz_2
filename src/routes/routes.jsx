@@ -6,6 +6,8 @@ import EditPage from '../pages/EditPage';
 import HistoryPage from '../pages/HistoryPage';
 import TalkPage from '../pages/TalkPage';
 import ListAllArticles from '../pages/ListAllArticles.jsx'; // Adjust the path if needed
+import BookmarksPage from '../pages/Bookmarks.jsx';
+import ExploreByCuriosity from '../pages/ExploreByCuriosity.jsx'
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -16,9 +18,11 @@ const AppRoutes = () => {
       <Route path="/article/:title" element={<Article />} />
       <Route path="/category/:name" element={<CategoryList />} />
       <Route path="/edit/:title" element={<EditPage />} />
-      <Route path="/history/:title" element={<HistoryPage />} />
-      <Route path="/talk/:title" element={<TalkPage />} />
+      <Route path="/history/" element={<HistoryPage />} />
+      <Route path="/talks/" element={<TalkPage />} />
       <Route path="/articles" element={<ListAllArticles />} />
+      <Route path="/bookmarks" element={<BookmarksPage />} />
+      <Route path='/explore' element={<ExploreByCuriosity/>} /> 
     </Routes>
   );
 };
